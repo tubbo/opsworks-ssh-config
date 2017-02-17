@@ -1,8 +1,6 @@
 # Opsworks::Ssh::Config
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/opsworks/ssh/config`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Generate a `~/.ssh/config` from your OpsWorks stack.
 
 ## Installation
 
@@ -22,7 +20,17 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Set the `$AWS_ACCESS_KEY_ID` and `$AWS_SECRET_ACCESS_KEY` variables,
+then run the following command to append your opsworks hosts onto your
+existing `~/.ssh/config`:
+
+    bundle exec opsworks-ssh-config >> ~/.ssh/config
+
+If you don't already have a file there, run this command to create one:
+
+    bundle exec opsworks-ssh-config > ~/.ssh/config
+
+Now, you can SSH into your hosts by typing `ssh your_opsworks_stack_name_app1`!
 
 ## Development
 
