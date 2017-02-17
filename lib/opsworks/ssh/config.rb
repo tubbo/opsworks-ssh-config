@@ -19,6 +19,10 @@ module Opsworks
         @opsworks ||= Aws::OpsWorks::Client.new
       end
 
+      def self.generate!
+        new.result
+      end
+
       def each
         raise "No environments found in OpsWorks account" unless environments.any?
         environments.each do |environment|
@@ -28,7 +32,7 @@ module Opsworks
         end
       end
 
-      def to_s
+      def result
         @template.result(binding)
       end
 

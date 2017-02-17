@@ -2,4 +2,4 @@
 
 require 'opsworks/ssh/config'
 
-OpsWorks::Ssh::Config.to_s
+puts Opsworks::Ssh::Config.generate!
