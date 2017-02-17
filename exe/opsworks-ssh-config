@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'opsworks/ssh/config'
+
+OpsWorks::Ssh::Config.to_s
